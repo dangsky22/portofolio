@@ -55,7 +55,7 @@ export default function About() {
 
             <div className="fade-in" style={{ transitionDelay: '0.2s' }}>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                I'm a tech enthusiast who thrives at the intersection of
+                I&apos;m a tech enthusiast who thrives at the intersection of
                 software development and human collaboration. From building
                 mobile apps to coordinating large-scale national programs, I
                 bring both technical depth and organizational maturity to every

@@ -66,7 +66,7 @@ export default function Contact() {
             <div className="h-px w-16 bg-electric-cyan"></div>
           </div>
           <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
-            Let's Build Something
+            Let&apos;s Build Something
             <br />
             <span className="text-electric-cyan">Together</span>
           </h2>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -111,13 +112,16 @@ export default function Hero() {
             <div className="relative h-full flex items-center justify-center">
               <div className="absolute inset-0 bg-electric-cyan/5 blur-3xl animate-pulse"></div>
               <div className="relative floating">
-                <img
+                <Image
                   src="/foto.png"
                   alt="Rizky Dermawan"
+                  width={320}
+                  height={320}
                   className="w-80 h-80 object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
                   style={{
                     filter: 'drop-shadow(0 0 30px rgba(0, 229, 255, 0.3))',
                   }}
+                  priority
                 />
               </div>
             </div>
