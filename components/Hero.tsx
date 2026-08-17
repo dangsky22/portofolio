@@ -57,9 +57,6 @@ export default function Hero() {
           <div className="lg:col-span-8">
             <div className="fade-in">
               <div className="mb-4">
-                <div className="text-sm text-electric-cyan font-mono tracking-widest mb-2">
-                  &lt;DEVELOPER /&gt;
-                </div>
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-none">
                   <span className="block text-white">RIZKY</span>
                   <span className="block text-electric-cyan glow-text relative">
