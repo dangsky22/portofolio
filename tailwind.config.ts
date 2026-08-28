@@ -9,9 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'dark-bg': '#0a0a0a',
-        'dark-charcoal': '#1a1a1a',
-        'electric-cyan': '#00E5FF',
+        'navy-deep': '#080B14',
+        'navy-dark': '#0F1424',
+        'electric-blue': '#5B8CFF',
+        'violet': '#9B6CFF',
+        'cyan-highlight': '#5DE6FF',
+        'white-heading': '#F5F7FF',
+        'white-soft': '#B8C0D4',
+        'gray-blue': '#717A91',
       },
       fontFamily: {
         'display': ['Space Grotesk', 'sans-serif'],

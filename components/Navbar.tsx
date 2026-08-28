@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-charcoal/80 backdrop-blur-lg shadow-lg'
+          ? 'glass shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           <a
             href="#hero"
-            className="text-xl font-display font-bold text-electric-cyan"
+            className="text-xl font-display font-bold text-electric-blue"
           >
             RD
           </a>
@@ -45,7 +45,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-electric-cyan transition-colors duration-300 font-medium"
+                className="text-white-soft hover:text-electric-blue transition-colors duration-300 font-medium"
               >
                 {link.label}
               </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden">
-            <button className="text-gray-300 hover:text-electric-cyan">
+            <button className="text-white-soft hover:text-electric-blue">
               <i className="fas fa-bars text-xl"></i>
             </button>
           </div>

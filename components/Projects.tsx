@@ -57,18 +57,18 @@ export default function Projects() {
     <section
       id="projects"
       ref={projectsRef}
-      className="section-padding bg-dark-charcoal/30 relative"
+      className="section-padding relative"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="fade-in mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-16 bg-electric-cyan"></div>
-            <span className="text-electric-cyan font-display text-sm tracking-widest">
+            <div className="h-1 w-16 bg-gradient-to-r from-electric-blue to-violet rounded-full"></div>
+            <span className="text-electric-blue font-display text-sm tracking-widest font-bold">
               PROJECTS
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-white">
-            Featured <span className="text-electric-cyan">Work</span>
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-white-heading leading-tight">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-violet">Work</span>
           </h2>
         </div>
 
@@ -79,34 +79,34 @@ export default function Projects() {
               className="fade-in group"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="bg-dark-bg border border-electric-cyan/20 hover:border-electric-cyan transition-all duration-300 h-full flex flex-col overflow-hidden hover:scale-105 hover:shadow-2xl hover:shadow-electric-cyan/20">
+              <div className="glass hover:bg-white/10 transition-all duration-500 h-full flex flex-col overflow-hidden hover:scale-105 hover:shadow-2xl hover:shadow-electric-blue/20 rounded-3xl border border-white/10">
                 <div
-                  className={`h-2 bg-gradient-to-r ${project.gradient}`}
+                  className={`h-3 bg-gradient-to-r ${project.gradient} rounded-t-3xl`}
                 ></div>
 
-                <div className="p-6 flex-1 flex flex-col">
+                <div className="p-8 flex-1 flex flex-col">
                   <div className="mb-4">
-                    <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:text-electric-cyan transition-colors">
+                    <h3 className="text-2xl font-display font-bold text-white-heading mb-1 group-hover:text-electric-blue transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-gray-400 font-medium">
+                    <p className="text-sm text-gray-blue font-bold">
                       {project.subtitle}
                     </p>
                   </div>
 
-                  <p className="text-gray-300 mb-4 flex-1">
+                  <p className="text-white-soft mb-6 flex-1 font-medium leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="space-y-3">
-                    <div className="text-sm text-electric-cyan font-mono">
+                  <div className="space-y-4">
+                    <div className="text-sm text-electric-blue font-mono font-bold bg-white/5 px-3 py-2 rounded-xl border border-white/10">
                       {project.tech}
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan text-xs font-medium hover:bg-electric-cyan/20 hover:scale-110 transition-all duration-300 cursor-default"
+                          className="px-4 py-2 bg-white/5 border border-white/10 text-cyan-highlight text-xs font-bold hover:bg-white/10 hover:scale-110 transition-all duration-300 cursor-default rounded-full shadow-sm"
                         >
                           {tag}
                         </span>

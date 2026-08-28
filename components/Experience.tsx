@@ -72,18 +72,18 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="fade-in mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-16 bg-electric-cyan"></div>
-            <span className="text-electric-cyan font-display text-sm tracking-widest">
+            <div className="h-1 w-16 bg-gradient-to-r from-electric-blue to-violet rounded-full"></div>
+            <span className="text-electric-blue font-display text-sm tracking-widest font-bold">
               EXPERIENCE
             </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-white">
-            Professional <span className="text-electric-cyan">Experience</span>
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-white-heading leading-tight">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-violet">Experience</span>
           </h2>
         </div>
 
         <div className="relative">
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-electric-cyan/30"></div>
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-electric-blue/50 via-violet/50 to-transparent rounded-full"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -92,30 +92,30 @@ export default function Experience() {
                 className="fade-in relative pl-8 md:pl-20"
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute left-0 md:left-8 top-2 w-3 h-3 bg-electric-cyan rounded-full transform -translate-x-[5px] ring-4 ring-dark-bg"></div>
+                <div className="absolute left-0 md:left-8 top-2 w-4 h-4 bg-electric-blue rounded-full transform -translate-x-[6px] ring-4 ring-navy-deep shadow-lg shadow-electric-blue/50"></div>
 
-                <div className="bg-dark-charcoal/50 border border-electric-cyan/20 p-6 md:p-8 hover:border-electric-cyan transition-all duration-300 group hover:bg-dark-charcoal/70 hover:shadow-lg hover:shadow-electric-cyan/10">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div className="glass p-6 md:p-10 hover:bg-white/10 transition-all duration-500 group hover:shadow-2xl hover:shadow-electric-blue/20 rounded-3xl border border-white/10">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                     <div>
-                      <h3 className="text-2xl font-display font-bold text-white mb-2 group-hover:text-electric-cyan transition-colors">
+                      <h3 className="text-2xl font-display font-bold text-white-heading mb-2 group-hover:text-electric-blue transition-colors">
                         {exp.role}
                       </h3>
-                      <p className="text-lg text-electric-cyan font-medium">
+                      <p className="text-lg text-electric-blue font-bold">
                         {exp.company}
                       </p>
                     </div>
-                    <div className="text-gray-400 text-sm mt-2 md:mt-0 font-mono">
+                    <div className="text-gray-blue text-sm mt-2 md:mt-0 font-mono font-bold bg-white/5 px-4 py-1 rounded-full border border-white/10">
                       {exp.period}
                     </div>
                   </div>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {exp.responsibilities.map((resp, idx) => (
                       <li
                         key={idx}
-                        className="text-gray-300 flex items-start gap-3"
+                        className="text-white-soft flex items-start gap-3 font-medium"
                       >
-                        <i className="fas fa-chevron-right text-electric-cyan text-xs mt-1.5"></i>
+                        <i className="fas fa-chevron-right text-cyan-highlight text-xs mt-1.5"></i>
                         <span>{resp}</span>
                       </li>
                     ))}
