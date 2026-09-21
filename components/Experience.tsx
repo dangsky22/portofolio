@@ -71,59 +71,51 @@ export default function Experience() {
     <section id="experience" ref={expRef} className="section-padding relative">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="fade-in mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-1 w-16 bg-gradient-to-r from-electric-blue to-violet rounded-full"></div>
-            <span className="text-electric-blue font-display text-sm tracking-widest font-bold">
-              EXPERIENCE
-            </span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-white-heading leading-tight">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-violet">Experience</span>
+          <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+            Professional Experience
+          </p>
+          <h2 className="text-5xl md:text-6xl font-display text-ink leading-tight">
+            Work History
           </h2>
         </div>
 
-        <div className="relative">
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-electric-blue/50 via-violet/50 to-transparent rounded-full"></div>
+        <div className="space-y-16">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="fade-in"
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div className="md:col-span-3">
+                  <p className="text-sm text-ink-soft font-mono mb-4">
+                    {exp.period}
+                  </p>
+                </div>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="fade-in relative pl-8 md:pl-20"
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="absolute left-0 md:left-8 top-2 w-4 h-4 bg-electric-blue rounded-full transform -translate-x-[6px] ring-4 ring-navy-deep shadow-lg shadow-electric-blue/50"></div>
-
-                <div className="glass p-6 md:p-10 hover:bg-white/10 transition-all duration-500 group hover:shadow-2xl hover:shadow-electric-blue/20 rounded-3xl border border-white/10">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                    <div>
-                      <h3 className="text-2xl font-display font-bold text-white-heading mb-2 group-hover:text-electric-blue transition-colors">
-                        {exp.role}
-                      </h3>
-                      <p className="text-lg text-electric-blue font-bold">
-                        {exp.company}
-                      </p>
-                    </div>
-                    <div className="text-gray-blue text-sm mt-2 md:mt-0 font-mono font-bold bg-white/5 px-4 py-1 rounded-full border border-white/10">
-                      {exp.period}
-                    </div>
-                  </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-2xl font-display text-ink mb-2">
+                    {exp.role}
+                  </h3>
+                  <p className="text-lg text-accent mb-6">
+                    {exp.company}
+                  </p>
 
                   <ul className="space-y-3">
                     {exp.responsibilities.map((resp, idx) => (
                       <li
                         key={idx}
-                        className="text-white-soft flex items-start gap-3 font-medium"
+                        className="text-ink-soft flex items-start gap-3"
                       >
-                        <i className="fas fa-chevron-right text-cyan-highlight text-xs mt-1.5"></i>
+                        <span className="text-accent mt-2">·</span>
                         <span>{resp}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

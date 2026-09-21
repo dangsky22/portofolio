@@ -58,32 +58,23 @@ export default function Skills() {
     <section id="skills" ref={skillsRef} className="section-padding relative">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="fade-in mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-1 w-16 bg-gradient-to-r from-electric-blue to-violet rounded-full"></div>
-            <span className="text-electric-blue font-display text-sm tracking-widest font-bold">
-              SKILLS
-            </span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-white-heading leading-tight">
-            Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-violet">Stack</span>
+          <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+            Capabilities
+          </p>
+          <h2 className="text-5xl md:text-6xl font-display text-ink leading-tight">
+            Technical & Human Skills
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="fade-in" style={{ transitionDelay: '0.1s' }}>
-            <h3 className="text-2xl font-display font-bold text-white-heading mb-8 flex items-center gap-3">
-              <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-white/10">
-                <i className="fas fa-code text-electric-blue"></i>
-              </div>
-              Technical Skills
+            <h3 className="text-sm tracking-widest uppercase text-ink-soft mb-8 border-b border-ink/5 pb-4">
+              Development
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-x-6 gap-y-4">
               {technicalSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="px-5 py-3 glass border border-white/10 hover:bg-white/10 hover:scale-110 transition-all duration-500 cursor-default group hover:shadow-xl hover:shadow-electric-blue/20 rounded-2xl"
-                >
-                  <span className="text-white-soft font-bold group-hover:text-electric-blue transition-colors">
+                <div key={index} className="group">
+                  <span className="text-base text-ink-soft group-hover:text-ink transition-colors">
                     {skill}
                   </span>
                 </div>
@@ -92,20 +83,17 @@ export default function Skills() {
           </div>
 
           <div className="fade-in" style={{ transitionDelay: '0.2s' }}>
-            <h3 className="text-2xl font-display font-bold text-white-heading mb-8 flex items-center gap-3">
-              <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center border border-white/10">
-                <i className="fas fa-users text-violet"></i>
-              </div>
-              Soft Skills
+            <h3 className="text-sm tracking-widest uppercase text-ink-soft mb-8 border-b border-ink/5 pb-4">
+              Leadership
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {softSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 group cursor-default hover:translate-x-3 transition-all duration-300 glass p-4 rounded-2xl border border-white/10 hover:bg-white/10 hover:shadow-lg hover:shadow-violet/10"
+                  className="flex items-center gap-3 group"
                 >
-                  <div className="w-3 h-3 bg-gradient-to-br from-electric-blue to-violet rounded-full group-hover:scale-150 transition-transform shadow-lg shadow-electric-blue/50"></div>
-                  <span className="text-base text-white-soft font-bold group-hover:text-cyan-highlight transition-colors">
+                  <div className="w-1 h-1 bg-accent rounded-full"></div>
+                  <span className="text-base text-ink-soft group-hover:text-ink transition-colors">
                     {skill}
                   </span>
                 </div>

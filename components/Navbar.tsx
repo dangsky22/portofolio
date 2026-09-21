@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,27 +26,27 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'glass shadow-lg'
+          ? 'bg-paper/80 backdrop-blur-md border-b border-ink/5'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-8 py-6">
         <div className="flex justify-between items-center">
           <a
             href="#hero"
-            className="text-xl font-display font-bold text-electric-blue"
+            className="text-2xl font-display italic text-ink"
           >
-            RD
+            RD.
           </a>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-12">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white-soft hover:text-electric-blue transition-colors duration-300 font-medium"
+                className="text-ink-soft hover:text-ink transition-colors duration-300 text-sm tracking-widest uppercase font-medium"
               >
                 {link.label}
               </a>
@@ -53,10 +54,31 @@ export default function Navbar() {
           </div>
 
           <div className="md:hidden">
-            <button className="text-white-soft hover:text-electric-blue">
-              <i className="fas fa-bars text-xl"></i>
+            <button 
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-ink-soft hover:text-ink"
+              aria-label="Toggle menu"
+            >
+              <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
             </button>
           </div>
+
+          {menuOpen && (
+            <div className="absolute top-full left-0 right-0 bg-paper border-t border-ink/5 md:hidden">
+              <div className="px-8 py-6 space-y-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block text-ink-soft hover:text-ink transition-colors duration-300 text-sm tracking-widest uppercase font-medium"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>
