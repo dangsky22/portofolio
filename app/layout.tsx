@@ -6,12 +6,15 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  preload: true,
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
+  weight: ["400"],
+  preload: true,
 });
 
 export const metadata: Metadata = {

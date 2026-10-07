@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import Organizational from '@/components/Organizational';
-import Contact from '@/components/Contact';
+
+const About = dynamic(() => import('@/components/About'), { ssr: true });
+const Experience = dynamic(() => import('@/components/Experience'), { ssr: true });
+const Projects = dynamic(() => import('@/components/Projects'), { ssr: true });
+const Skills = dynamic(() => import('@/components/Skills'), { ssr: true });
+const Organizational = dynamic(() => import('@/components/Organizational'), { ssr: true });
+const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
 
 export default function Home() {
   return (
