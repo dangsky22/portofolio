@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 pt-12">
-            <div className="fade-in mb-16">
+            <div className="mb-16">
               <h1 className="text-7xl md:text-8xl lg:text-9xl font-display leading-none mb-8">
                 <span className="block text-ink italic">Rizky</span>
                 <span className="block text-ink italic">Dermawan</span>
@@ -59,17 +59,14 @@ export default function Hero() {
               <div className="h-px w-24 bg-accent"></div>
             </div>
 
-            <div className="fade-in mb-12" style={{ transitionDelay: '0.2s' }}>
+            <div className="mb-12">
               <p className="text-lg text-ink-soft max-w-xl leading-relaxed">
                 Final-year Computer Science student at Paramadina University
                 with hands-on experience in Flutter, Laravel, and Node.js.
               </p>
             </div>
 
-            <div
-              className="fade-in flex flex-wrap gap-6"
-              style={{ transitionDelay: '0.4s' }}
-            >
+            <div className="flex flex-wrap gap-6">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
@@ -85,7 +82,7 @@ export default function Hero() {
           </div>
 
           <div className="lg:col-span-5 hidden lg:flex justify-end">
-            <div className="fade-in" style={{ transitionDelay: '0.3s' }}>
+            <div>
               <Image
                 src="/foto.png"
                 alt="Rizky Dermawan"
