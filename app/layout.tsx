@@ -23,12 +23,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Rizky Dermawan Hendry Putra | Portfolio",
-  description: "Final-year Computer Science student at Paramadina University with hands-on experience in Flutter, Laravel, and Node.js — bridging code and collaboration.",
+  description: "Computer Science graduate from Paramadina University with hands-on experience in Flutter, Laravel, and Node.js — bridging code and collaboration.",
   keywords: ["Rizky Dermawan", "Portfolio", "Web Developer", "Mobile Developer", "Flutter", "Laravel", "Node.js"],
   authors: [{ name: "Rizky Dermawan Hendry Putra" }],
   openGraph: {
     title: "Rizky Dermawan Hendry Putra | Portfolio",
-    description: "Informatics Student · Mobile & Web Developer · Project Management",
+    description: "Informatics Graduate · Mobile & Web Developer · Project Management",
     type: "website",
   },
 };

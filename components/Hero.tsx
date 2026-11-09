@@ -93,8 +93,8 @@ export default function Hero() {
             </p>
 
             <p className="text-lg text-ink-soft max-w-xl leading-relaxed mb-10">
-              Welcome — thanks for stopping by! I&apos;m a final-year Computer
-              Science student at Paramadina University with hands-on experience
+              Welcome — thanks for stopping by! I&apos;m a Computer Science
+              graduate from Paramadina University with hands-on experience
               in Flutter, Laravel, and Node.js.
             </p>
 

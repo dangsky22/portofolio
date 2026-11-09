@@ -24,7 +24,7 @@ export default function About() {
   }, []);
 
   const stats = [
-    { value: '3.73', label: 'GPA / 4.00' },
+    { value: '3.74', label: 'GPA / 4.00' },
     { value: '35+', label: 'Students Taught' },
     { value: '5000+', label: 'Schools Managed' },
     { value: '4', label: 'Internships & Roles' },
@@ -58,11 +58,11 @@ export default function About() {
               </p>
               <div className="glass p-6 border-l-4 border-l-accent">
                 <p className="text-ink-soft">
-                  Currently pursuing <strong className="text-ink">S1 Informatika</strong> at{' '}
+                  Graduated with an <strong className="text-ink">S1 Informatika</strong> degree from{' '}
                   <strong className="text-ink">
                     Paramadina University
                   </strong>{' '}
-                  (Sep 2022 – Present)
+                  (Sep 2022 – Nov 2026)
                 </p>
               </div>
             </div>
