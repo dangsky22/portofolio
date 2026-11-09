@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const withAlpha = (v: string) => `rgb(var(${v}) / <alpha-value>)`;
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,22 +11,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'paper': '#FDFCF0',
-        'ink': '#1A1A1A',
-        'ink-soft': '#4A4A4A',
-        'accent': '#C5A059',
-        'navy-deep': '#FDFCF0',
-        'navy-dark': '#F7F4E8',
-        'electric-blue': '#8A6A2F',
-        'violet': '#B28B45',
-        'cyan-highlight': '#8A6A2F',
-        'white-heading': '#1A1A1A',
-        'white-soft': '#4A4A4A',
-        'gray-blue': '#6B6254',
+        paper: withAlpha("--paper"),
+        surface: withAlpha("--surface"),
+        ink: withAlpha("--ink"),
+        "ink-soft": withAlpha("--ink-soft"),
+        accent: withAlpha("--accent"),
+        "accent-2": withAlpha("--accent-2"),
       },
       fontFamily: {
-        'display': ['Playfair Display', 'serif'],
-        'body': ['Inter', 'sans-serif'],
+        display: ["var(--font-display)", "serif"],
+        body: ["var(--font-inter)", "sans-serif"],
       },
     },
   },

@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.glass,
-.glass-dark {
-  background: #F7F4E8;
-  border: 1px solid rgba(26, 26, 26, 0.12);
-  box-shadow: 0 12px 30px rgba(26, 26, 26, 0.06);
+/* Color tokens (RGB channels so Tailwind opacity modifiers work) */
+:root {
+  --paper: 11 14 20;       /* #0B0E14 page background */
+  --surface: 20 25 34;     /* #141922 cards */
+  --ink: 240 236 228;      /* #F0ECE4 warm off-white */
+  --ink-soft: 160 166 178; /* #A0A6B2 muted text */
+  --accent: 245 169 98;    /* #F5A962 warm amber */
+  --accent-2: 125 211 192; /* #7DD3C0 mint */
+  color-scheme: dark;
 }
 
 * {
@@ -17,20 +21,68 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: #FDFCF0;
-  color: #1A1A1A;
+  background: rgb(var(--paper));
+  color: rgb(var(--ink));
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.35);
+  color: rgb(var(--ink));
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-display), serif;
   font-weight: 400;
-  color: #1A1A1A;
+  color: rgb(var(--ink));
+  letter-spacing: -0.01em;
+}
+
+/* Card surface */
+.glass {
+  background: rgb(var(--surface) / 0.7);
+  border: 1px solid rgb(var(--ink) / 0.08);
+  border-radius: 1.25rem;
+  transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+}
+
+.glass-hover:hover {
+  border-color: rgb(var(--accent) / 0.4);
+  background: rgb(var(--surface));
+  transform: translateY(-4px);
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, rgb(var(--accent)) 0%, #FFD3A3 45%, rgb(var(--accent-2)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section eyebrow: "01 — About" */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(var(--accent));
+  font-weight: 500;
+}
+
+.eyebrow::after {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: rgb(var(--accent) / 0.5);
 }
 
 .section-padding {
@@ -39,20 +91,32 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 768px) {
   .section-padding {
-    padding: 8rem 4rem;
+    padding: 8rem 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-padding {
-    padding: 10rem 8rem;
+    padding: 9rem 6rem;
   }
 }
 
-.editorial-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
+/* Soft background glows */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--ink) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink) / 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 30% 40%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 30% 40%, black 20%, transparent 70%);
 }
 
 .fade-in {
@@ -66,9 +130,51 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-.accent-line {
-  height: 1px;
-  background: #1A1A1A;
-  opacity: 0.1;
-  width: 100%;
+/* Warm greeting */
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.4s ease-in-out 0.6s 2;
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.greet-in {
+  animation: greet-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes greet-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.caret {
+  color: rgb(var(--accent));
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(var(--accent-2) / 0.6); }
+  50% { box-shadow: 0 0 0 6px rgb(var(--accent-2) / 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave, .greet-in, .caret, .pulse-dot { animation: none; }
+  .fade-in { transition: none; opacity: 1; transform: none; }
+  .glass-hover:hover { transform: none; }
 }

@@ -36,11 +36,11 @@ export default function About() {
       ref={aboutRef}
       className="section-padding relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-7">
             <div className="fade-in mb-12">
-              <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+              <p className="eyebrow mb-6">
                 About Me
               </p>
               <h2 className="text-5xl md:text-6xl font-display text-ink mb-8 leading-tight">
@@ -56,7 +56,7 @@ export default function About() {
                 bring both technical depth and organizational maturity to every
                 project.
               </p>
-              <div className="glass p-8 border-l-2 border-accent">
+              <div className="glass p-6 border-l-4 border-l-accent">
                 <p className="text-ink-soft">
                   Currently pursuing <strong className="text-ink">S1 Informatika</strong> at{' '}
                   <strong className="text-ink">
@@ -76,9 +76,9 @@ export default function About() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="glass p-6 hover:shadow-xl transition-all duration-500 group"
+                  className="glass glass-hover p-6"
                 >
-                  <div className="text-4xl font-display text-accent mb-2">
+                  <div className="text-4xl font-display gradient-text mb-2">
                     {stat.value}
                   </div>
                   <div className="text-xs text-ink-soft uppercase tracking-wider">

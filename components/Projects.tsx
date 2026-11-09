@@ -56,9 +56,9 @@ export default function Projects() {
       ref={projectsRef}
       className="section-padding relative"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="fade-in mb-16">
-          <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+          <p className="eyebrow mb-6">
             Selected Work
           </p>
           <h2 className="text-5xl md:text-6xl font-display text-ink leading-tight">
@@ -66,46 +66,49 @@ export default function Projects() {
           </h2>
         </div>
 
-        <div className="space-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div
+            <article
               key={index}
-              className="fade-in"
+              className="fade-in glass glass-hover group flex flex-col overflow-hidden"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-ink/5 last:border-0">
-                <div className="md:col-span-3">
-                  <h3 className="text-3xl font-display text-ink italic mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-ink-soft uppercase tracking-widest">
+              <div
+                className="h-1.5 bg-gradient-to-r from-accent via-accent/60 to-accent-2"
+                aria-hidden="true"
+              />
+              <div className="p-7 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-8">
+                  <span className="font-display text-5xl text-ink/10 group-hover:text-accent/40 transition-colors duration-500">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-xs text-accent-2 uppercase tracking-widest mt-2">
                     {project.subtitle}
-                  </p>
+                  </span>
                 </div>
 
-                <div className="md:col-span-6">
-                  <p className="text-ink-soft leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-3">
+                <h3 className="text-3xl font-display text-ink mb-4 group-hover:text-accent transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <p className="text-ink-soft leading-relaxed mb-8 flex-1">
+                  {project.description}
+                </p>
+
+                <div className="pt-5 border-t border-ink/10">
+                  <p className="text-xs text-ink-soft/70 font-mono mb-3">{project.tech}</p>
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="text-xs text-ink-soft px-3 py-1 border border-ink/10"
+                        className="text-xs text-ink px-3 py-1 rounded-full bg-ink/5 border border-ink/10"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-
-                <div className="md:col-span-3">
-                  <p className="text-sm text-ink-soft font-mono">
-                    {project.tech}
-                  </p>
-                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,13 +9,17 @@ const inter = Inter({
   preload: true,
 });
 
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400"],
+  variable: "--font-display",
+  style: ["normal", "italic"],
   preload: true,
 });
+
+export const viewport: Viewport = {
+  themeColor: "#0B0E14",
+};
 
 export const metadata: Metadata = {
   title: "Rizky Dermawan Hendry Putra | Portfolio",
@@ -35,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body className={inter.className}>{children}</body>
     </html>
   );

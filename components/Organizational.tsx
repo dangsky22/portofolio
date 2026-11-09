@@ -62,9 +62,9 @@ export default function Organizational() {
       ref={orgRef}
       className="section-padding relative"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="fade-in mb-16">
-          <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+          <p className="eyebrow mb-6">
             Leadership & Community
           </p>
           <h2 className="text-5xl md:text-6xl font-display text-ink leading-tight">
@@ -76,10 +76,10 @@ export default function Organizational() {
           {organizations.map((org, index) => (
             <div
               key={index}
-              className="fade-in glass p-8 hover:shadow-xl transition-all duration-500"
+              className="fade-in glass glass-hover p-8"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <p className="text-xs text-ink-soft font-mono mb-4">
+              <p className="text-xs text-accent-2 font-mono mb-4">
                 {org.period}
               </p>
               <h3 className="text-xl font-display text-ink mb-2">
@@ -87,7 +87,7 @@ export default function Organizational() {
               </h3>
               <p className="text-ink-soft mb-3">{org.organization}</p>
               {org.highlight && (
-                <div className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-medium mt-2">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-accent/15 text-accent text-sm font-medium mt-2">
                   {org.highlight}
                 </div>
               )}

@@ -69,9 +69,9 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={expRef} className="section-padding relative">
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="fade-in mb-16">
-          <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+          <p className="eyebrow mb-6">
             Professional Experience
           </p>
           <h2 className="text-5xl md:text-6xl font-display text-ink leading-tight">
@@ -79,44 +79,45 @@ export default function Experience() {
           </h2>
         </div>
 
-        <div className="space-y-16">
+        <ol className="relative border-l border-ink/10 ml-2 md:ml-4 space-y-12">
           {experiences.map((exp, index) => (
-            <div
+            <li
               key={index}
-              className="fade-in"
+              className="fade-in relative pl-8 md:pl-12"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <div className="md:col-span-3">
-                  <p className="text-sm text-ink-soft font-mono mb-4">
+              <span
+                className={`absolute -left-[7px] top-8 w-3.5 h-3.5 rounded-full border-2 border-paper ${
+                  index === 0 ? 'bg-accent-2 pulse-dot' : 'bg-accent'
+                }`}
+                aria-hidden="true"
+              />
+              <div className="glass glass-hover p-6 md:p-8">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <span className="inline-block rounded-full bg-ink/5 border border-ink/10 px-3 py-1 text-xs text-ink-soft font-mono">
                     {exp.period}
-                  </p>
+                  </span>
+                  {index === 0 && (
+                    <span className="text-xs text-accent-2 tracking-wider uppercase">Latest</span>
+                  )}
                 </div>
+                <h3 className="text-2xl font-display text-ink mb-1">
+                  {exp.role}
+                </h3>
+                <p className="text-accent mb-6">{exp.company}</p>
 
-                <div className="md:col-span-9">
-                  <h3 className="text-2xl font-display text-ink mb-2">
-                    {exp.role}
-                  </h3>
-                  <p className="text-lg text-accent mb-6">
-                    {exp.company}
-                  </p>
-
-                  <ul className="space-y-3">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li
-                        key={idx}
-                        className="text-ink-soft flex items-start gap-3"
-                      >
-                        <span className="text-accent mt-2">·</span>
-                        <span>{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="space-y-3">
+                  {exp.responsibilities.map((resp, idx) => (
+                    <li key={idx} className="text-ink-soft flex items-start gap-3 leading-relaxed">
+                      <span className="mt-2.5 w-1.5 h-1.5 shrink-0 rounded-full bg-accent/70" aria-hidden="true" />
+                      <span>{resp}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

@@ -56,9 +56,9 @@ export default function Skills() {
 
   return (
     <section id="skills" ref={skillsRef} className="section-padding relative">
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="fade-in mb-16">
-          <p className="text-xs tracking-widest uppercase text-accent mb-8 font-medium">
+          <p className="eyebrow mb-6">
             Capabilities
           </p>
           <h2 className="text-5xl md:text-6xl font-display text-ink leading-tight">
@@ -66,39 +66,40 @@ export default function Skills() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="fade-in" style={{ transitionDelay: '0.1s' }}>
-            <h3 className="text-sm tracking-widest uppercase text-ink-soft mb-8 border-b border-ink/5 pb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="fade-in glass p-8 lg:col-span-7" style={{ transitionDelay: '0.1s' }}>
+            <h3 className="flex items-center gap-3 text-sm tracking-widest uppercase text-ink mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent" aria-hidden="true" />
               Development
             </h3>
-            <div className="flex flex-wrap gap-x-6 gap-y-4">
+            <div className="flex flex-wrap gap-2.5">
               {technicalSkills.map((skill, index) => (
-                <div key={index} className="group">
-                  <span className="text-base text-ink-soft group-hover:text-ink transition-colors">
-                    {skill}
-                  </span>
-                </div>
+                <span
+                  key={index}
+                  className="text-sm text-ink-soft px-4 py-2 rounded-full bg-ink/5 border border-ink/10 hover:border-accent/50 hover:text-ink hover:bg-accent/10 transition-colors duration-300"
+                >
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
 
-          <div className="fade-in" style={{ transitionDelay: '0.2s' }}>
-            <h3 className="text-sm tracking-widest uppercase text-ink-soft mb-8 border-b border-ink/5 pb-4">
+          <div className="fade-in glass p-8 lg:col-span-5" style={{ transitionDelay: '0.2s' }}>
+            <h3 className="flex items-center gap-3 text-sm tracking-widest uppercase text-ink mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent-2" aria-hidden="true" />
               Leadership
             </h3>
-            <div className="space-y-3">
+            <ul className="space-y-1">
               {softSkills.map((skill, index) => (
-                <div
+                <li
                   key={index}
-                  className="flex items-center gap-3 group"
+                  className="flex items-center justify-between gap-3 py-3 border-b border-ink/5 last:border-0 text-ink-soft hover:text-ink transition-colors"
                 >
-                  <div className="w-1 h-1 bg-accent rounded-full"></div>
-                  <span className="text-base text-ink-soft group-hover:text-ink transition-colors">
-                    {skill}
-                  </span>
-                </div>
+                  <span>{skill}</span>
+                  <span className="text-accent-2 text-sm" aria-hidden="true">✦</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
